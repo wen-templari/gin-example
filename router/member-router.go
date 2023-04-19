@@ -1,10 +1,10 @@
 package router
 
 import (
-	"gin-example/src/model"
-	"gin-example/src/model/dto"
-	"gin-example/src/service"
-	"gin-example/src/util"
+	"gin-example/model"
+	"gin-example/model/dto"
+	"gin-example/service"
+	"gin-example/util"
 	"log"
 
 	"github.com/gin-gonic/gin"

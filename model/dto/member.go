@@ -1,6 +1,6 @@
 package dto
 
-import model "gin-example/src/model"
+import model "gin-example/model"
 
 type CreateMemberTokenReq struct {
 	MemberId string `json:"member_id" validate:"required,len=10,numeric"`

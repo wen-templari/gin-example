@@ -2,8 +2,8 @@ package test
 
 import (
 	"encoding/json"
-	"gin-example/src/repo"
-	"gin-example/src/router"
+	"gin-example/repo"
+	"gin-example/router"
 	"net/http"
 	"net/http/httptest"
 	"os"

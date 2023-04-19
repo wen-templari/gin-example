@@ -1,10 +1,10 @@
 package service
 
 import (
-	"gin-example/src/model"
-	"gin-example/src/model/dto"
-	"gin-example/src/repo"
-	"gin-example/src/util"
+	"gin-example/model"
+	"gin-example/model/dto"
+	"gin-example/repo"
+	"gin-example/util"
 	"net/http"
 )
 

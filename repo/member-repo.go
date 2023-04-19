@@ -1,15 +1,13 @@
 package repo
 
 import (
-	"gin-example/src/model"
-	"gin-example/src/util"
+	"gin-example/model"
+	"gin-example/util"
 	"time"
 
 	"github.com/Masterminds/squirrel"
 	_ "github.com/go-sql-driver/mysql"
 )
-
-// type Member struct{}
 
 func getMemberStatement() squirrel.SelectBuilder {
 	members := squirrel.Select(util.FieldsConstructor(model.Member{})).From("member")
@@ -45,8 +43,16 @@ func GetMembers(offset uint64, limit uint64) ([]model.Member, error) {
 }
 
 func CreateMember(member *model.Member) error {
-	sqlMember, argsMember, _ := squirrel.Insert("member").Columns("member_id", "alias", "name", "section", "profile", "phone", "qq", "created_by", "gmt_create", "gmt_modified").Values(member.MemberId, member.Alias, member.Name, member.Section, member.Profile, member.Phone, member.Qq, member.CreatedBy, time.Now().Format("2006-01-02 15:04:11"), time.Now().Format("2006-01-02 15:04:11")).ToSql()
-	sqlRole, argsRole, _ := squirrel.Insert("member_role_relation").Columns("member_id", "role_id").Values(member.MemberId, 1).ToSql()
+	sqlMember, argsMember, _ := squirrel.Insert("member").
+		Columns("member_id", "alias", "name", "section", "profile", "phone", "qq", "created_by", "gmt_create", "gmt_modified").
+		Values(member.MemberId, member.Alias, member.Name, member.Section, member.Profile, member.Phone,
+			member.Qq, member.CreatedBy, time.Now().Format("2006-01-02 15:04:11"),
+			time.Now().Format("2006-01-02 15:04:11")).
+		ToSql()
+	sqlRole, argsRole, _ := squirrel.Insert("member_role_relation").
+		Columns("member_id", "role_id").
+		Values(member.MemberId, 1).
+		ToSql()
 	conn, err := db.Begin()
 	if err != nil {
 		return err

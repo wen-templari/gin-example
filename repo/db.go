@@ -1,7 +1,7 @@
 package repo
 
 import (
-	"gin-example/src/util"
+	"gin-example/util"
 	"os"
 
 	"github.com/jmoiron/sqlx"

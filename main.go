@@ -1,9 +1,9 @@
 package main
 
 import (
-	"gin-example/src/repo"
-	"gin-example/src/router"
-	"gin-example/src/util"
+	"gin-example/repo"
+	"gin-example/router"
+	"gin-example/util"
 )
 
 func main() {
